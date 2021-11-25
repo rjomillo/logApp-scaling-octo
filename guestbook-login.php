@@ -1,6 +1,30 @@
 <?php
-  
 
+  require('config/config.php');
+  require('config/db.php');
+
+  if(isset($_POST['username']) && isset($_POST['password']))
+  {
+    function validate($var)
+    {
+      $var = trim($var);
+      $var = stripslahes($var);
+      $var = htmlspecialchars($var);
+      return $data;
+    }
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $sql =  "SELECT `username`, `password` FROM `user` WHERE username = '$username' AND password = '$password'";
+
+      $result = mysqli_query($conn, $sql  );
+
+      if (mysqli_num_rows($result) === 1)
+      {
+        header('Location: guestbook-list.php');
+      }
+  }
+  
 
 
 ?>

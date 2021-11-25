@@ -12,4 +12,4 @@
 
 </head>
 <body class="d-flex flex-column min-vh-100">
-	<?php include('navbar.php'); ?>
+  <?php include('navbar.php'); ?>
